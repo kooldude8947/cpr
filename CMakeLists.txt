@@ -306,8 +306,8 @@ else()
         include(libpsl)
     endif()
 
-    FetchContent_Declare(curl URL https://github.com/curl/curl/releases/download/curl-8_13_0/curl-8.13.0.tar.xz
-                              URL_HASH SHA256=4a093979a3c2d02de2fbc00549a32771007f2e78032c6faa5ecd2f7a9e152025) # the file hash for curl-8.13.0.tar.xz
+    FetchContent_Declare(curl URL https://github.com/curl/curl/releases/download/curl-8_22_0/curl-8.22.0.tar.xz
+                              URL_HASH SHA256=f7ef3ae8a22e521f289803fe93543eb64c329b58aa73a9e224dfd915a2a5f4f7) # the file hash for curl-8.22.0.tar.xz
     FetchContent_MakeAvailable(curl)
 
     restore_variable(DESTINATION CMAKE_CXX_CLANG_TIDY BACKUP CMAKE_CXX_CLANG_TIDY_BKP)
