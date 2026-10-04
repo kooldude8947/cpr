@@ -29,6 +29,6 @@ jobs:
       uses: actions/upload-artifact@v7
       with:
         name: cpr-Windows-artifact
-        path: ${{github.workspace}}/build/Release
+        path: ${{github.workspace}}\build
         if-no-files-found: ignore
         retention-days: 0
