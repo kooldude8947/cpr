@@ -14,7 +14,7 @@ jobs:
       uses: ilammy/msvc-dev-cmd@v1
       
     - name: Install OpenSSL
-      run: choco install curl openssl -y
+      run: choco install openssl -y
       
     - name: Checkout
       uses: actions/checkout@v7
@@ -22,7 +22,7 @@ jobs:
     - name: "Build & Test"
       shell: cmd
       run: |
-        cmake -S . -B build -DCPR_BUILD_TESTS=OFF -DCPR_BUILD_TESTS_SSL=OFF -DCPR_FORCE_OPENSSL_BACKEND=ON -DCPR_USE_SYSTEM_CURL=ON
+        cmake -S . -B build -DCPR_BUILD_TESTS=OFF -DCPR_BUILD_TESTS_SSL=OFF -DCPR_FORCE_OPENSSL_BACKEND=ON
         cmake --build build --config Release
 
     - name: Upload artifact
