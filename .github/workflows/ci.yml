@@ -14,7 +14,11 @@ jobs:
       uses: ilammy/msvc-dev-cmd@v1
       
     - name: Install OpenSSL
-      run: choco install openssl curl -y
+      run: choco install openssl -y
+
+    - name: Install curl
+      shell: cmd
+      run: vcpkg.exe install curl:x64-windows
       
     - name: Checkout
       uses: actions/checkout@v7
