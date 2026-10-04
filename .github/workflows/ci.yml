@@ -250,7 +250,7 @@ jobs:
         ctest-options: ${{ env.CTEST_OPTIONS }}
 
   windows-msvc-openssl:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
     - uses: actions/setup-python@v6
     - name: Install meson
@@ -260,7 +260,7 @@ jobs:
     - name: Install OpenSSL
       run: choco install openssl -y
     - name: Checkout
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
     - name: "Build & Test"
       env:
         CMAKE_GENERATOR: "Visual Studio 17 2022"
