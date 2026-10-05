@@ -18,6 +18,8 @@ jobs:
       
     - name: Checkout
       uses: actions/checkout@v7
+      with:
+        ref: '1.14.x-ci'
       
     - name: "Build & Test"
       shell: cmd
@@ -30,6 +32,6 @@ jobs:
       uses: actions/upload-artifact@v7
       with:
         name: cpr-Windows-artifact
-        path: ${{github.workspace}}\build
+        path: ${{github.workspace}}
         if-no-files-found: ignore
         retention-days: 0
