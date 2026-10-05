@@ -22,8 +22,9 @@ jobs:
     - name: "Build & Test"
       shell: cmd
       run: |
-        cmake -S . -B build -DCPR_BUILD_TESTS=OFF -DCPR_BUILD_TESTS_SSL=OFF -DCPR_FORCE_OPENSSL_BACKEND=ON
+        cmake -S . -B build -DCPR_BUILD_TESTS=OFF -DCPR_BUILD_TESTS_SSL=OFF -DCPR_FORCE_OPENSSL_BACKEND=ON -DBUILD_SHARED_LIBS=OFF
         cmake --build build --config Release
+        cmake --install
 
     - name: Upload artifact
       uses: actions/upload-artifact@v7
